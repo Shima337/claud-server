@@ -30,7 +30,7 @@
 
 | Переменная | Обязательность | Описание |
 |------------|----------------|----------|
-| `PORT` | задаётся Railway | Порт HTTP/WS. Railway подставляет сам; по умолчанию 8080. |
+| `PORT` | задаётся Railway | Порт HTTP/WS. При деплое через Docker добавь вручную `PORT=8080`, если в логах «Invalid port». |
 | `OPENCLAW_STATE_DIR` | рекомендуется | Каталог состояния (конфиг, сессии). На Railway: `/data/.openclaw`. |
 | `OPENCLAW_WORKSPACE_DIR` | рекомендуется | Workspace агента. На Railway: `/data/workspace`. |
 | `OPENCLAW_GATEWAY_TOKEN` | рекомендуется | Секрет для доступа к Control UI / WebChat. |

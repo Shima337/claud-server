@@ -6,7 +6,8 @@ builder = "nixpacks"
 # buildCommand left default: npm install (or pnpm if lockfile present)
 
 [deploy]
-startCommand = "npx openclaw gateway --port ${PORT:-8080} --bind lan --allow-unconfigured"
+# Must run in shell so PORT is expanded; normalize to digits (Railway may pass PORT oddly)
+startCommand = "sh -c 'P=\"${PORT:-8080}\"; P=$(echo \"$P\" | tr -cd 0-9); [ -z \"$P\" ] && P=8080; exec npx openclaw gateway --port \"$P\" --bind lan --allow-unconfigured'"
 healthcheckPath = "/health"
 healthcheckTimeout = 90
 restartPolicyType = "on_failure"
