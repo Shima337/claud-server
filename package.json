@@ -8,8 +8,8 @@
     "node": ">=22"
   },
   "scripts": {
-    "start": "openclaw gateway --port ${PORT:-8080} --bind lan --allow-unconfigured",
-    "gateway": "openclaw gateway --port ${PORT:-8080} --bind lan --allow-unconfigured"
+    "start": "npx openclaw gateway --port ${PORT:-8080} --bind lan --allow-unconfigured",
+    "gateway": "npx openclaw gateway --port ${PORT:-8080} --bind lan --allow-unconfigured"
   },
   "dependencies": {
     "openclaw": "latest"

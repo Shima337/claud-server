@@ -6,7 +6,7 @@ builder = "nixpacks"
 # buildCommand left default: npm install (or pnpm if lockfile present)
 
 [deploy]
-startCommand = "openclaw gateway --port ${PORT:-8080} --bind lan --allow-unconfigured"
+startCommand = "npx openclaw gateway --port ${PORT:-8080} --bind lan --allow-unconfigured"
 healthcheckPath = "/health"
 healthcheckTimeout = 30
 restartPolicyType = "on_failure"
