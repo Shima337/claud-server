@@ -1,0 +1,13 @@
+# Railway config for second OpenClaw instance (gateway + Telegram only)
+# https://docs.railway.app/reference/config-as-code
+
+[build]
+builder = "nixpacks"
+# buildCommand left default: npm install (or pnpm if lockfile present)
+
+[deploy]
+startCommand = "openclaw gateway --port ${PORT:-8080} --bind lan --allow-unconfigured"
+healthcheckPath = "/health"
+healthcheckTimeout = 30
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 5

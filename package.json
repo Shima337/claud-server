@@ -1,0 +1,17 @@
+{
+  "name": "claud-server",
+  "version": "1.0.0",
+  "description": "Second OpenClaw instance — gateway + Telegram for Railway",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "openclaw gateway --port ${PORT:-8080} --bind lan --allow-unconfigured",
+    "gateway": "openclaw gateway --port ${PORT:-8080} --bind lan --allow-unconfigured"
+  },
+  "dependencies": {
+    "openclaw": "latest"
+  }
+}

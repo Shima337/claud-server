@@ -1,0 +1,8 @@
+node_modules
+.env
+.git
+*.log
+data
+.openclaw
+README.md
+.gitignore
