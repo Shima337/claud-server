@@ -5,6 +5,11 @@ FROM node:22-bookworm-slim
 
 WORKDIR /app
 
+# Some transitive deps may require `git` during install (npm will spawn git).
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends git ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+
 # Copy dependency list and install (no global openclaw — use local for reproducible version)
 COPY package.json ./
 RUN npm install --omit=dev
