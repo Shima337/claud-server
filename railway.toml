@@ -8,6 +8,6 @@ builder = "nixpacks"
 [deploy]
 startCommand = "npx openclaw gateway --port ${PORT:-8080} --bind lan --allow-unconfigured"
 healthcheckPath = "/health"
-healthcheckTimeout = 30
+healthcheckTimeout = 90
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 5
